@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>User Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>User Management System</h1>
+    <hr>
+    <h2>Update USer</h2>
+
+    <form action="#" th:action="@{/users/save}" th:object="${user}"
+          method="POST">
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{nom}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{prenom}" placeholder="User Prenom" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="User Email" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{tel}" placeholder="User Telephone" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{cp}" placeholder="User Code postal" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{ville}" placeholder="User Ville" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{adresse}" placeholder="User Adresse" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Update Employee</button>
+    </form>
+    <hr>
+    <a th:href = "@{/static}"> Back to Employee List</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+</body>
+</html>
